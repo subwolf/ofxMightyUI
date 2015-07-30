@@ -40,7 +40,7 @@
 	#define MUI_FONT_TYPE ofTrueTypeFont
 #else
 	#define MUI_FONT_TYPE ofxTrueTypeFontFS
-	#include "_fontStash/ofxTrueTypeFontFS.h"
+	#include "_fontstash/ofxTrueTypeFontFS.h"
 #endif
 
 #define MUI_FONT_SIZE 12
@@ -87,25 +87,25 @@ namespace mui{
 	#include "NativeIOS.h"
 
 	#ifndef OF_MAX_TOUCHES
-		#warning OF_MAX_TOUCHES not defined, assuming 20.
+		//warning OF_MAX_TOUCHES not defined, assuming 20.
 		#define OF_MAX_TOUCHES 20
 	#endif
-//#elif TARGET_OS_MAC
-//	#include "NativeOSX.h"
 #elif TARGET_OS_MAC
-	#warning don't use textfields, lol
+	#include "NativeOSX.h"
+#elif TARGET_OS_MAC
+	//warning don't use textfields, lol
 #elif TARGET_OS_WIN32
-	#pragma message ("don't use textfields!")
+	//pragma message ("don't use textfields!")
 #elif defined(__ANDROID_API__)
-	#warning No ofxMui textfield implementation for android yet!
+	//warning No ofxMui textfield implementation for android yet!
 #elif MUI_BE_INSANE
 #else
-	#warning No native textfield implementation for this platform. You can define MUI_BE_INSANE to skip over this warning if you know you're not using textfields.
+	//warning No native textfield implementation for this platform. You can define MUI_BE_INSANE to skip over this warning if you know you're not using textfields.
 #endif
 
 
 #ifndef OF_MAX_TOUCHES 
-#pragma message(" OF_MAX_TOUCHES not defined, assuming 20.")
+//pragma message(" OF_MAX_TOUCHES not defined, assuming 20.")
 #define OF_MAX_TOUCHES 20
 #endif
 

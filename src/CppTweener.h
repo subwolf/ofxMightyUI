@@ -307,7 +307,7 @@ namespace tween {
 				equal = true;
 			}
 			if (equal) {
-				for (unsigned int i =0 ; i < p.total_properties; i++ ) {
+				for (std::size_t i =0 ; i < p.total_properties; i++ ) {
 					if( properties[i].initialValue != p.properties[i].initialValue ||
 					   properties[i].finalValue != p.properties[i].finalValue) {
 						equal = false;
